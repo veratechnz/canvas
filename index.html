@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div class="row">	
+
+		<div class="col-md-8 col-md-offset-2">
+
+			<h1>MY JS</h1>
+
+			<canvas id="theCanvas" width="400" height="400">
+				
+			</canvas>
+
+		</div>
+
+</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+
+		var triggerFunctions = function(){
+
+			setCanvas();
+			setColors();
+			makeRed();
+			makeBlue();
+
+			}();
+
+
+
+
+		function setCanvas(){
+
+			 drawing = document.getElementById('theCanvas');
+		
+		
+		     //get data uri of the image. 
+			  imgURI = drawing.toDataURL('image/png');
+			 
+			 //display the image
+			  image = document.createElement('image');
+			 image.src = imgURI;
+			 document.body.appendChild(image);
+			  context = drawing.getContext('2d');
+
+			} 
+
+			function setColors(){
+
+			 	colorA = '#0000ff';
+			 	colorB = 'red';
+
+			}
+
+			function makeRed(){
+
+					 context.fillStyle = colorA;
+					 context.fillRect(10, 10, 250, 250);
+					 context.lineWidth = 10;
+					 context.lineJoin = "round";
+
+			}
+
+
+			function makeBlue(){
+
+					context.strokeStyle = colorB;
+					context.strokeRect(80, 80, 250, 250);
+
+			}
+
+
+
+	</script>
+</body>
+</html>
